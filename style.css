@@ -1,0 +1,67 @@
+:root {
+    --ceu: #0d1b2a;
+    --ouro: #ffb703;
+    --verde: #2a9d8f;
+    --verm: #e63946;
+    --fig: #1b263b;
+    --branco: #f8f9fa;
+}
+
+body {
+    background-color: var(--ceu);
+    background-image:
+        radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: estrelas 60s linear infinite;
+
+    color: var(--branco);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@keyframes estrelas {
+    from {
+        background-position: 0 0, 40px 60px, 130px 270px;
+    }
+
+    to {
+        background-position: 550px 550px, 390px 610px, 380px 820px;
+    }
+}
+
+.card{
+    background-color: var (--fig);
+    width: 320px;
+    overflow: hidden;
+    box-shadow: 0 10px 250px rgba(255,183,3,0.3);
+    border: 4px solid  var(--ouro);
+    border-image: linear-gradient(135deg, #b58925, var(--ouro), white, var(--ouro), #b58925) 1;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover{transform: scale(1.02);}
+
+img{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border: 4px solid var(--ouro);
+    object-fit: cover;
+}
+
+.top{
+    background: linear-gradient(90deg,var(--verm),var(--verde));
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
