@@ -10,12 +10,12 @@
 body {
     background-color: var(--ceu);
     background-image:
-        radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
-        radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
-        radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px);
+        radial-gradient(white, #ffffff33 2px, transparent 40px),
+        radial-gradient(white, #ffffff26 1px, transparent 30px),
+        radial-gradient(white, #ffffff1a 2px, transparent 40px);
     background-size: 550px 550px, 350px 350px, 250px 250px;
     background-position: 0 0, 40px 60px, 130px 270px;
-    animation: estrelas 60s linear infinite;
+    animation: stars 60s linear infinite;
 
     color: var(--branco);
     margin: 0;
@@ -25,7 +25,7 @@ body {
     min-height: 100vh;
 }
 
-@keyframes estrelas {
+@keyframes stars {
     from {
         background-position: 0 0, 40px 60px, 130px 270px;
     }
@@ -44,6 +44,7 @@ body {
     border-image: linear-gradient(135deg, #b58925, var(--ouro), white, var(--ouro), #b58925) 1;
     text-align: center;
     transition: transform 0.3s ease;
+    position: relative;
 }
 
 .card:hover{transform: scale(1.02);}
@@ -64,4 +65,99 @@ img{
     align-items: center;
     font-weight: bold;
     font-size: 0.9rem;
+}
+
+.year{
+    background-color: var(--ouro);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.rarity{
+    font-size: 0.75rem;
+    color: var(--ouro);
+    letter-spacing: 2px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.info-player{
+    margin: 10px 0 2px 0;
+    font-size: 1.4rem;
+    color: var(--branco);
+}
+
+.position{
+    font-size: 0.85rem;
+    color: #00b4d8;
+    text-transform: uppercase;
+}
+
+.statistics{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.box{
+    background-color: #ffffff0d;
+    border: 1px solid #ffb70333;
+    padding: 8px;
+    border-radius: 8px;
+    width: 60px;
+}
+
+.value{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--ouro);
+}
+
+.type{
+    font-size: 0.7rem;
+    color: #bbb;
+}
+
+.footer-card{
+    background-color: #00000033;
+    padding: 12px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+@keyframes bounce{
+    0%, 100%{transform:translatey(0) rotate(0deg);}
+    50%{transform:translateY(-6px) rotate(180deg);}
+}
+
+.animated-ball{
+    animation: bounce 1.4s ease-in-out;
+    color: var(--ouro);
+    font-size: 1.2rem;
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 30%;
+    height: 200%;
+    background: linear-gradient(to right, transparent, #ffffff18, transparent);
+    transform: rotate(30deg);
+    animation: reflection 6s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes reflection{
+    0%{left: -60%;}
+    30%{left: 160%;}
+    100%{left: 180%;}
 }
